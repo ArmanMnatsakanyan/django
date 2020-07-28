@@ -29,7 +29,7 @@ def car_delete_view(request, id):
 
 	if request.method == 'POST':
 		car.delete()
-		return redirect('../../../')
+		return redirect('carsbase:cars')
 	
 	context = {
 		'object' : car
