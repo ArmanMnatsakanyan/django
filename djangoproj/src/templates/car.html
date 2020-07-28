@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<h1>From Cars</h1>
+-------------------
+<h2>{{ object.manufacturer }}</h2> 
+<h4>{{ object.model }}</h4> 
+<h4>{{ object.seats_number }}</h4> 
+<h4>{{ object.year }}</h4>
+
+<a href = '{{ object.get_absolute_urls }}delete/'> Delete </a> 
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<h1>Cars</h1>
+
+<form action='http://www.google.com/search' method='GET'> 
+	<input type='test' name='q' placeholder="Car search">
+	<input type='submit' value='search'>
+</form>
+
+{% for car in object_list %}
+	--------------------------------
+	<h2>{{forloop.counter}} - <a href='{{ car.get_absolute_urls }}'>{{ car.manufacturer }}</a></h2>
+	--------------------------------
+	<h4>{{ car.model }}</h4>
+	<h4>{{ car.seats_number }}</h4>
+	<h4>{{ car.year }}</h4>
+
+{% endfor %}
+
+
+
+{% endblock %}
