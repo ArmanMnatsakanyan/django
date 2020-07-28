@@ -18,6 +18,12 @@ class CarForm(forms.ModelForm):
 			'year',
 		]
 
+	def clean_manufacturer(self):
+		data = self.cleaned_data.get('manufacturer')
+		if data.lower() == 'kalina':
+			raise forms.ValidationError("Bad model")
+		return data
+
 
 class RawCarForm(forms.Form):
 	manufacturer = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'производитель'}))
